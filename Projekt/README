@@ -1,0 +1,16 @@
+PLIKI:
+* datasets_generate.py                              - przetwarzanie danych z NKJP[http://nkjp.pl/index.php?page=14&lang=0], wycinanie zdań, czyszczenie.
+* dataset_char_stats.py, dataset_word_stats.py      - ładowanie gotowych danych (+ wypisywanie statystyk jeśli wywołane z konsoli)
+* char_train.py, char_test.py, char_generator.py    - odpowiednio trening, testowanie i generowanie w modelu bazującym na znakach
+* word_train.py, word_test.py, word_generator.py    - jw. tylko że m modelu bazującym na słowach
+* rnn_minibatch.py                                  - implementacja RNN w theano(z https://github.com/gwtaylor/theano-rnn)
+
+JAK UŻYWAĆ:
+datasets_generate: trzeba ściągnąć podkorpus milionowy z powyższej strony(~3GB) i wtedy jak uruchomi się z konsoli to przetworzy dane do datasets/*.set
+dataset_char_stats, dataset_word_stats: jak się uruchomi z konsoli to wypisze statystyki i zapisze wykresy w pictures/
+char_train, word_train: na początku pliku są opcje konfiguracyjne(parametry modelu), jak się uruchomi będzie trenować i zapisywać co jakiś czas w snapshots i na zakończenie w models/*final.pkl
+char_test, word_test: pierwszy argument to model (*.pkl) który chcemy sprawdzić a drugi to liczba przykładów do wypisania
+char_generator, word_generator: jw. ale argumenty 2+ to wejsciowe litery dla generatora
+
+WYMAGANIA:
+theano, python-numpy, python-unicodedata, python-lxml

@@ -1,0 +1,7 @@
+[submodule "theano-rnn"]
+	path = theano-rnn
+	url = https://github.com/ktaneishi/theano-rnn.git
+
+[submodule "theano-hf"]
+	path = theano-hf
+	url = https://github.com/boulanni/theano-hf.git
